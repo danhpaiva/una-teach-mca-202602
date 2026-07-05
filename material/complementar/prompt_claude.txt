@@ -1,0 +1,79 @@
+Você é um desenvolvedor e professor. Preciso que você crie os arquivos de um
+site MkDocs (Material) para uma disciplina, a partir da EMENTA que colo no final
+deste prompt.
+
+## Contexto do repositório
+- Este é o repositório da disciplina, criado a partir de um template MkDocs
+  Material (já contém: mkdocs.yml, requirements.txt, .github/workflows/ci.yml,
+  docs/index.md, docs/setup.md e alguns arquivos de exemplo).
+- Disciplina: «NOME DA DISCIPLINA»
+- Semestre/período: «ex: 2026/2»
+- Usuário GitHub / slug do repositório: «ex: danhpaiva/una-xxx-mkdocs-202602»
+- URL do GitHub Pages: «ex: https://danhpaiva.github.io/una-xxx-mkdocs-202602»
+- Sigla para nomear os repositórios das listas dos alunos: «ex: una-xxx»
+- Linguagem dos exemplos de código: «Portugol | Python | Java | ...»
+
+## O que fazer
+1. Leia primeiro os arquivos existentes (mkdocs.yml, docs/*, workflow) para
+   entender a estrutura antes de mudar qualquer coisa.
+2. A partir da EMENTA, monte um cronograma coerente de aulas (uma lista por
+   aula), com numeração limpa e sequencial (sem duplicar números). Se a ementa
+   não deixar claro o número de aulas, proponha uma quantidade e me pergunte
+   antes de gerar tudo.
+3. Antes de gerar o conteúdo, use perguntas objetivas para confirmar: linguagem
+   dos exemplos, quantidade de aulas/listas e se devo reescrever o index.
+4. Crie os arquivos:
+   - `docs/index.md`: página inicial com objetivo da disciplina (baseado na
+     ementa), cronograma em tabela (Aula | Assunto | Entrega), ferramentas e
+     dicas de estudo. Use abas (`=== "..."`) e admonitions (`!!! info`, etc.).
+   - `docs/aulas/NN-aula.md` (uma por aula): conteúdo didático e envolvente, com
+     admonitions, abas para comparar conceitos, tabelas, diagramas Mermaid quando
+     fizer sentido, exemplos de código na linguagem escolhida, e uma seção de
+     exercícios em blocos recolhíveis (`??? abstract`). Terminar cada aula com um
+     `!!! tip "Próxima Parada"` e um link para a lista correspondente.
+   - `docs/listas/NN-lista.md` (uma por aula): no padrão "Missão", com passo a
+     passo de entrega (criar repositório público «una-xxx»-listaNN, subir código,
+     entregar link no Google Classroom), exercícios em `??? abstract`, estrutura
+     de pastas sugerida e um checklist de qualidade (`!!! check`).
+5. Atualize `mkdocs.yml`:
+   - `site_name`, `site_url` e `site_author` corretos para esta disciplina.
+   - `nav` com todas as aulas e listas.
+   - IMPORTANTE: títulos de nav que contenham dois-pontos (`:`) DEVEM ficar entre
+     aspas, senão o YAML quebra (ex: `- "07. Controle: IF-ELSE": aulas/07-aula.md`).
+   - Habilite Mermaid (via `pymdownx.superfences` com custom_fence) e, se usar
+     fórmulas, `pymdownx.arithmatex` + MathJax.
+6. Remova arquivos-template órfãos que não forem usados (ex: aula de introdução
+   genérica, pastas de rascunho vazias). Deixe o projeto/trabalho comentado no
+   nav (vou defini-lo depois).
+7. Garanta que o workflow `.github/workflows/ci.yml` use o padrão de DOIS jobs
+   (build e deploy separados), pois isso evita o erro "Multiple artifacts named
+   github-pages" ao re-executar o deploy. Se ainda estiver num job único, ajuste
+   para:
+
+   - job `build`: checkout (fetch-depth: 0) → setup-python → pip install -r
+     requirements.txt → mkdocs build → actions/configure-pages@v5 →
+     actions/upload-pages-artifact@v3 (path: ./site)
+   - job `deploy` (needs: build): environment github-pages →
+     actions/deploy-pages@v4
+   - Adicione um grupo de `concurrency` (group: pages-${{ github.ref }},
+     cancel-in-progress: true) e permissions: contents: read, pages: write,
+     id-token: write.
+
+8. Valide localmente com `python -m mkdocs build` e corrija quaisquer erros
+   ANTES de commitar (avisos de "no git logs" e de páginas fora do nav como
+   setup.md são inofensivos).
+9. Só depois de o build passar, faça o commit (mensagens em Conventional Commits,
+   em português) e o push para `main`. Acompanhe o run do GitHub Actions e me
+   confirme quando o deploy concluir com sucesso, informando a URL do site.
+
+Se precisar de mais informações, me pergunte.
+
+## EMENTA DA DISCIPLINA
+Fundamentos de conjuntos, relações e funções . 
+Proposições lógicas, tabelas-verdade e equivalências na formulação de raciocínios formais. 
+Álgebra booleana e suas aplicações em circuitos digitais e sistemas computacionais. 
+Princípios de contagem e combinatória aplicados a problemas computacionais. 
+Estruturas matemáticas como matrizes, grafos e árvores na modelagem de dados. 
+Indução matemática e recorrência na construção e prova de propriedades. 
+Modelagem matemática de problemas computacionais em diferentes domínios. 
+Aplicações em algoritmos e estruturas de dados para solução de problemas.

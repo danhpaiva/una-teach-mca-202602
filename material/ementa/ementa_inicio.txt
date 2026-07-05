@@ -1,0 +1,44 @@
+Nível 1: Fundamentos Básicos (A Base)
+Estes temas estabelecem a linguagem necessária para todo o resto da computação.
+
+Fundamentos de conjuntos, relações e funções: 
+É o ponto de partida. 
+Sem entender o que é um conjunto ou como uma função mapeia dados, 
+é impossível avançar em qualquer teoria de computação.
+
+Proposições lógicas, 
+tabelas-verdade e 
+equivalências na formulação de raciocínios formais: 
+Introduz o rigor do pensamento lógico, essencial para a escrita de algoritmos e condicionais (if/else).
+
+Nível 2: Ferramentas Operacionais
+Aqui utilizamos a base para criar operações e entender fluxos digitais.
+
+Álgebra booleana e suas aplicações em circuitos digitais e sistemas computacionais: 
+A aplicação direta da lógica em hardware. 
+É onde a abstração matemática encontra a corrente elétrica.
+
+Princípios de contagem e combinatória aplicados a problemas computacionais: 
+Essencial para entender a complexidade de algoritmos e probabilidade básica.
+
+Nível 3: Estruturas de Modelagem
+Nesta etapa, aprendemos a organizar dados e representar o mundo real através de abstrações matemáticas.
+
+Estruturas matemáticas como matrizes, grafos e árvores na modelagem de dados: 
+Introduz formas de organizar informações que não são lineares, 
+permitindo representar redes, hierarquias e relações complexas.
+
+Indução matemática e recorrência na construção e prova de propriedades: 
+Ferramenta crucial para provar que algoritmos 
+(especialmente os recursivos) funcionam corretamente.
+
+Nível 4: Aplicação Avançada (O Domínio)
+O ápice, onde os conhecimentos anteriores são integrados para resolver problemas complexos.
+
+Modelagem matemática de problemas computacionais em diferentes domínios: 
+Capacidade de traduzir um problema do mundo real (como otimização de rotas ou análise financeira) 
+para uma linguagem que o computador entenda.
+
+Aplicações em algoritmos e estruturas de dados para solução de problemas: 
+O objetivo final. 
+Aqui você utiliza tudo o que aprendeu acima para escrever código eficiente, escalável e correto.

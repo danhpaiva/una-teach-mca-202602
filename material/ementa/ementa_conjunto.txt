@@ -1,0 +1,110 @@
+Nível 1: Fundamentos Básicos (A Base)
+Estes temas estabelecem a linguagem necessária para todo o resto da computação.
+
+Fundamentos de conjuntos, relações e funções: 
+É o ponto de partida. 
+Sem entender o que é um conjunto ou como uma função mapeia dados, 
+é impossível avançar em qualquer teoria de computação.
+
+Excelente! Vamos conectar esses conceitos matemáticos com situações práticas que ocorrem todos os dias dentro de sistemas de informação e gestão de dados.
+
+Aqui estão exemplos reais onde as operações de conjuntos são as "engrenagens" por trás do sistema:
+
+---
+
+### 1. União ($\cup$): Agregação de Leads
+
+Imagine que sua empresa de TI quer enviar um e-mail marketing. Você tem duas fontes de dados:
+
+* **Conjunto A:** Clientes cadastrados no site.
+* **Conjunto B:** Usuários que baixaram o seu aplicativo.
+
+Para ter uma lista única de contatos sem duplicar nomes (já que alguém pode ser cliente e usar o app), você faz uma **União**.
+
+* **Aplicação real:** Na hora de gerar a lista de e-mails, o sistema executa um `SELECT ... UNION`. Se o e-mail "joao@email.com" aparece nas duas listas, a operação de união garante que ele receba apenas **uma** mensagem, mantendo a integridade da comunicação.
+
+### 2. Interseção ($\cap$): Detecção de Fraude ou Recomendação
+
+Pense em um sistema de recomendação (como Netflix ou Spotify) ou em segurança:
+
+* **Conjunto A:** Usuários que assistiram ao filme "Matrix".
+* **Conjunto B:** Usuários que assistiram ao filme "Inception".
+
+A **Interseção** ($A \cap B$) retorna os usuários que viram **ambos**.
+
+* **Aplicação real:** Esse grupo é o seu público-alvo para recomendar um terceiro filme de ficção científica complexa. Em termos de segurança, se você tem uma lista de IPs suspeitos de ataques e uma lista de IPs que acessaram sua página de pagamento, a **Interseção** mostra exatamente quem tentou acessar sua página a partir de um IP perigoso.
+
+### 3. Diferença ($\setminus$): Limpeza de Dados e Exclusão
+
+Este é um dos cenários mais comuns em TI, o famoso "excluir o que não pertence".
+
+* **Conjunto A (Usuários Ativos):** Todos os funcionários com conta no sistema.
+* **Conjunto B (Usuários com Acesso ao RH):** Funcionários do departamento de RH.
+
+### Resumo para seus slides
+
+| Operação | Contexto de TI | Exemplo prático |
+| --- | --- | --- |
+| **União** | Consolidação de Dados | Mesclar listas de contatos de fontes diferentes. |
+| **Interseção** | Filtro de Afinidade | Encontrar usuários com interesses em comum (recomendações). |
+| **Diferença** | Exclusão de Acesso | Listar todos os usuários, removendo os que foram deletados. |
+
+---
+
+### Por que levar isso para os alunos?
+
+Ao apresentar esses exemplos, você mostra aos alunos que eles não estão apenas aprendendo "bolinhas" (Diagramas de Venn), mas sim a **lógica de filtragem de dados**. Um desenvolvedor que entende bem esses três conceitos escreverá consultas SQL muito mais rápidas, pois ele saberá exatamente qual operação é necessária para atingir o resultado com o menor custo de processamento.
+
+Ficou claro como esses exemplos podem ser usados nas suas aulas? Quer que eu ajude a estruturar um slide sobre um desses exemplos com um código SQL simples para ilustrar?
+
+### 1. Produto Cartesiano ($A \times B$)
+
+Antes de chegar em "relações", os alunos precisam entender como criar pares ordenados.
+
+* **Conceito:** O conjunto de todos os pares ordenados $(a, b)$ onde $a \in A$ e $b \in B$.
+* **Conexão com Computação:** É a base das tabelas de banco de dados (o produto de duas colunas gera todas as combinações possíveis antes de um `JOIN`).
+
+### 2. Relações Binárias
+
+Agora que eles entendem o Produto Cartesiano, defina uma **Relação** como um **subconjunto** do produto cartesiano.
+
+* **Propriedades das Relações:** Ensine Reflexividade, Simetria e Transitividade.
+* **Por que isso importa?** Isso define o que é uma **Relação de Equivalência**. Sem isso, eles não entenderão como computadores organizam dados em classes.
+
+### 3. Introdução ao Conceito de Funções
+
+Uma função é um tipo especial de relação.
+
+* **Definição:** Uma relação $f: A \to B$ onde cada elemento de $A$ está relacionado a **exatamente um** elemento de $B$.
+* **Conceito chave:** Domínio, Contradomínio e Imagem (essencial para definir tipos de dados em linguagens de programação).
+
+### 4. Funções Injetoras, Sobrejetoras e Bijetoras
+
+Este é o ponto onde o aluno começa a entender a "eficiência" de algoritmos.
+
+* **Aplicação:** Se uma função é **bijetora**, significa que existe uma função inversa (reversibilidade de dados, criptografia, compressão).
+
+---
+
+### Sugestão de Cronograma de Aulas
+
+| Aula | Tópico | Objetivo Acadêmico |
+| --- | --- | --- |
+| **04** | Produto Cartesiano | Entender a formação de pares e matrizes. |
+| **05** | Relações Binárias | Classificar relações (Reflexiva, Simétrica, Transitiva). |
+| **06** | Relações de Equivalência | Compreender o particionamento de conjuntos. |
+| **07** | Introdução a Funções | Diferenciar relação de função. |
+| **08** | Injetora, Sobrejetora e Bijetora | Entender a estrutura de mapeamento de dados. |
+
+---
+
+### Dica Pedagógica para o seu material:
+
+Como você mencionou que faz slides e listas, **não perca a oportunidade de usar diagramas de flechas** para ilustrar funções. Visualmente, é a melhor forma de mostrar quando uma relação "deixa de ser função" (ex: um elemento do domínio apontando para dois do contradomínio).
+
+---
+
+**Uma reflexão para seus alunos:**
+Ao chegar em **Funções**, você pode introduzir o conceito de "Complexidade de Tempo". Uma função que mapeia $N$ dados para $N$ posições de memória é o que rege toda a estrutura de Arrays e Hash Maps.
+
+Você gostaria que eu preparasse um resumo teórico ou uma lista de exercícios para algum desses tópicos específicos (por exemplo, Produto Cartesiano ou Propriedades de Relações) para a sua próxima aula?

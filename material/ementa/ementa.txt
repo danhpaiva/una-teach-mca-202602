@@ -1,0 +1,18 @@
+Matematica Computacional
+
+https://www.youtube.com/watch?v=fD62cRHZ29w&list=PLO3hBdfBc4pE-wJCvjKTiBxkpIUvktBHy
+
+https://www.youtube.com/watch?v=hAKQRFRyz3k&list=PLvQ-BeS0wYi2VHMkTfKX5XTTAfhH8S4Gh
+
+https://www.youtube.com/watch?v=QE6ruiq632o&list=PLrOyM49ctTx-HWypJVvn_zMO1o7oOAfVx
+
+https://www.youtube.com/watch?v=ib3F1c2oKpA&list=PLxI8Can9yAHcXBgFryV0AV7LYdLR1skuF
+
+Fundamentos de conjuntos, relações e funções . 
+Proposições lógicas, tabelas-verdade e equivalências na formulação de raciocínios formais. 
+Álgebra booleana e suas aplicações em circuitos digitais e sistemas computacionais. 
+Princípios de contagem e combinatória aplicados a problemas computacionais. 
+Estruturas matemáticas como matrizes, grafos e árvores na modelagem de dados. 
+Indução matemática e recorrência na construção e prova de propriedades. 
+Modelagem matemática de problemas computacionais em diferentes domínios. 
+Aplicações em algoritmos e estruturas de dados para solução de problemas.
